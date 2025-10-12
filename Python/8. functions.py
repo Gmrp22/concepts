@@ -54,10 +54,12 @@ printS5(**info)
 
 
 
-#Reference vs Value
+# ------------------ Reference vs Value ------------------
 
 
-#By reference
+#---- By reference
+
+#--- [] as default value, the list is initialized only once, whebn the function is defined --important
 def modify_list(lst =[]):
     lst.append(4)
     print("Inside function:", lst)
@@ -65,14 +67,14 @@ def modify_list(lst =[]):
 
 lst = modify_list()
 modify_list()  # The list retains its state between calls
-modify_list(lst)  # A new list is created
-print("Outside function:", modify_list())  # Shows the modified list
+modify_list(lst)  # returns same list
+print("Outside function:", modify_list())  # Shows the same list
 
 #since we are reasigning the list, it does not retain its state
 def modfy_list2(lst = None):
     if lst is None:
         lst = []
-    lst.append(4)
+    lst.append(1)
     print("Inside function:", lst)
     return lst
 lst = modfy_list2()
@@ -81,7 +83,7 @@ modfy_list2(lst)  # A new list is created
 print("Outside function:", modfy_list2())  # Shows the modified list
 
 
-#By value
+#----- By value
 def modify_number(num):
     num += 10
     print("Inside function:", num)
@@ -93,3 +95,7 @@ print("Outside function:", number)  # Shows the original number
 modify_number(20)  # Works with a new number
 modify_number(number)  # Again, original number remains unchanged
 print("Outside function:", number)  # Still shows the original number
+
+
+
+
