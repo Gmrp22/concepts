@@ -1,4 +1,4 @@
-//  arguments passed by reference
+//  arguments passed by reference will reflect changes made to the object within the function, while primitive values will not be affected outside the function scope. Reassigning the parameter itself does not affect the original variable.
 
 function changePrimitive(prim) {
   prim = 2;
