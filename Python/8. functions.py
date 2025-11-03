@@ -57,7 +57,7 @@ printS5(**info)
 # ------------------ Reference vs Value ------------------
 
 
-#---- By reference
+#---- By reference, lists, dictionaries, sets are passed by reference, meaning changes made to the object within the function will be reflected outside the function as well.
 
 #--- [] as default value, the list is initialized only once, whebn the function is defined --important
 def modify_list(lst =[]):
@@ -83,7 +83,7 @@ modfy_list2(lst)  # A new list is created
 print("Outside function:", modfy_list2())  # Shows the modified list
 
 
-#----- By value
+#----- By value, numbers, strings, tuples are passed by value
 def modify_number(num):
     num += 10
     print("Inside function:", num)
